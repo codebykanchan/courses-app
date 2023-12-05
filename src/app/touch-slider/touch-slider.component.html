@@ -1,0 +1,64 @@
+<p></p>
+
+<div class ="slider-container">
+    <div 
+        class="slider-item" 
+        *ngFor="let image of images ; let i = index"
+        [ngClass]="{
+              'selected': i === selectedIndex,
+              'prev': i === selectedIndex-1,
+              'next': i === selectedIndex+1,
+              'hideLeft': i < selectedIndex-1,
+              'hideRight': i > selectedIndex+1,
+        }"
+        >
+        <img 
+           [src]="image.imgSrc" 
+           [alt]="image.imgAlt" 
+           class="slider-img"
+           (panRight) = "showPrev(i)"
+           (panLeft) = "showNext(i)"
+        >
+   </div> 
+</div>
+<style>
+   .button {
+     border: none;
+     color: white;
+     padding: 16px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     transition-duration: 0.4s;
+     cursor: pointer;
+   }
+   
+   .enroll-button {
+     background-color: white; 
+     color: black; 
+     border: 2px solid #04AA6D;
+   }
+   
+   .enroll-button:hover {
+     background-color: #04AA6D;
+     color: white;
+   }  
+  footer {
+    text-align: bottom;
+    padding: 3px;
+    background-color: rgb(241, 246, 251);
+    color: rgb(40, 47, 1);
+  }
+ 
+</style>
+
+
+<button class="button enroll-button" (click)="openEnrollLink()"> Enroll Now </button>
+
+
+<footer>
+   <p>Contact Us<br>
+   <a href="mailto:supoort@xxxxxxxx.com">support@abc.com</a></p>
+ </footer>

@@ -1,0 +1,20 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    //background-image: url('mainBack.gif');
+    background: grey url('robotcool.gif') no-repeat top left/105px 105px;
+    animation: mymove 7s infinite;
+
+    @keyframes mymove {
+        90% {background: black bottom right/90px 90px;}        
+      }
+    //background-image: linear-gradient(109.6deg, rgba(61,245,167,1) 11.2%, rgb(84, 84, 90));    
+
+    .container{
+        width: 500px;
+        height: 550px;
+    }
+}
